@@ -2,12 +2,17 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import Todo from '../../components/Todo/Todo';
-// import AddTodo from '../AddTodo/AddTodo';
+import AddTodo from '../../components/AddTodo/AddTodo';
 
 const Todos = () => {
   const [todosArr, setTodos] = useState([]);
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/todos').then(data => {
+    axios.get('https://jsonplaceholder.typicode.com/todos', {
+      params: {
+        _limit: 10
+      }
+    }).then(data => {
+
       setTodos(data.data);
     });
   }, []);
@@ -31,6 +36,7 @@ const Todos = () => {
 
   return (
     <div className="Container">
+      <AddTodo add={addHandler}></AddTodo>
       {
         todosArr.map(todo => <Todo key={todo.id} todo={todo} complete={() => { completeHandler(todo) }} delete={() => { deleteHandler(todo) }}></Todo>)
       }
