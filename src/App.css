@@ -3,7 +3,52 @@
   margin: auto;
   width: 40%;
 }
+
+.Container {
+  background: #e8e8e8;
+  border-radius: 4px;
+  padding: 5px;
+}
+
 .App h1 {
   text-align: center;
 }
 
+.AddForm {
+  width: 100%;
+  border: 1px solid #e8e8e8;
+}
+
+.AddContainer {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.AddContainer button {
+  margin-top: 10px;
+  width: 20%;
+  align-self: flex-end;
+}
+
+.AddContainer textarea {
+  height: 170px;
+}
+
+.search {
+  margin-bottom: 10px;
+}
+
+.search input {
+  padding: 10px;
+  width: 38%;
+  margin-right: 2px;
+}
+
+.search button {
+  padding: 10px;
+}
+
+.Completed {
+  text-decoration: line-through;
+}
